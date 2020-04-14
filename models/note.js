@@ -13,9 +13,12 @@ const noteSchema = new mongoose.Schema({
 
   date: {
     type: Date,
-    required: true,
   },
   important: Boolean,
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+  },
 })
 
 // Used for formatting of JSON output, _id to id and removing __v
